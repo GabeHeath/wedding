@@ -1,0 +1,364 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html {
+	background: #8ad1ff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #8ad1ff 0%, #e6ffff 74%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8ad1ff), color-stop(74%,#e6ffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #8ad1ff 0%,#e6ffff 74%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #8ad1ff 0%,#e6ffff 74%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #8ad1ff 0%,#e6ffff 74%); /* IE10+ */
+	background: linear-gradient(to bottom,  #8ad1ff 0%,#e6ffff 74%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ad1ff', endColorstr='#e6ffff',GradientType=0 ); /* IE6-9 */	
+	background-repeat: no-repeat;
+  height: 80%;
+}
+
+#mountain1 {
+  width: 120%;
+  position: relative;
+  top: -120px;
+  left: -60px;
+}
+
+#tree-hill1 {
+  width: 120%;
+  position: absolute;
+  top: 0px;
+  left: -90px;
+}
+
+/*#hill1 {
+  width: 130%;
+  position: absolute;
+  left: -190px;
+  bottom: -190px;
+}*/
+
+.ripple {
+   width: 5px;
+   height: 5px;
+   position: absolute;
+   border-radius: 25px;
+    -webkit-animation-name: ripple;
+    -webkit-animation-duration: 8s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-name: ripple;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes ripple {
+    0%   {left: initial; top: initial;}
+    33%  {left: 82%; top: 81%;}
+    66%  {left: 77%; top: 90%;}
+    100% {left: 83%; top: 105%;}
+}
+
+/* Standard syntax */
+/*@keyframes ripple {
+    0%   {background-color:red; left:78%; top:70%;}
+    33%  {background-color:yellow; left:82%; top:80%;}
+    66%  {background-color:blue; left: 77%; top:90%;}
+    100% {background-color:red; left:83% top:105%;}
+}*/
+
+.ripple:nth-child(1) {
+   background-color: #6dd1f6;
+   left: 82%;
+   top: 81%;
+}
+
+.ripple:nth-child(2) {
+   background-color: #fff;
+   left: 84%;
+   top: 81%;
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+
+#hill1 {
+	width: 100%;
+}
+
+#ripples {
+  position: absolute;
+  top: 67%;
+  left: 73.5%;
+  width: calc(26% - 241px);
+}
+
+#ripple2 {
+  position: absolute;
+  top: 72%;
+  left: 81%;
+  width: calc(5% - 50px);
+}
+
+#ripple3 {
+  position: absolute;
+  top: 77%;
+  left: 80%;
+  width: calc(5% - 50px);
+}
+
+#sun1 {
+   position: absolute;
+  top: -20px;
+  width: 250px;
+  right: 120px;
+}
+
+#melrose1 {
+  position: absolute;
+  left: 54%;
+  bottom: 375px;
+}
+
+#tree {
+  width: 140px;
+  position: absolute;
+  left: 1040px;
+  top: 350px;
+}
+
+#cloud2 {
+  width: 150px;
+  position: absolute;
+  top: 110px;
+}
+
+#courthouse {
+  width: 20px;
+  position: absolute;
+  top: 395px;
+  left: 350px;
+}
+
+#buildings {
+  width: 120%;
+  position: absolute;
+  top: 0px;
+  left: -90px
+}
+
+#cows {
+  width: 20px;
+  position: absolute;
+  left: 655px;
+  top: 430px;
+}
+
+.unselectable {
+   
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+img#sun1
+{
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         30s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+.layer {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  width: 140%;
+  position: relative;
+  left: -20%;
+  bottom: 10%;
+}
+
+#stream1 {
+  position: absolute;
+  left: 75%;
+  top: 69%;
+}
+
+#stream2 {
+  position: absolute;
+  left: 77%;
+  top: 69%;
+
+}
+
+/*path{
+ stroke-dasharray: 20;
+}*/
+
+#ripple1 {
+  stroke-dasharray: 100;
+  animation: dash 5s linear reverse infinite;
+}
+
+#ripple2 {
+  stroke-dasharray: 100;
+  animation: dash 5s linear reverse infinite;
+  animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+/*@media all and (min-width: 1220px) {
+  #stream1, #stream2 {
+    transform: scale(0.90);
+  }
+}
+
+@media all and (min-width: 1200px) {
+   #stream1, #stream2 {
+    transform: scale(0.60);
+  }
+}
+
+@media all and (min-width: 900px) {
+
+}
+
+@media all and (min-width: 600px) {
+
+}
+
+@media all and (min-width: 400px) {
+
+}*/
+
+
+
+
+
+
+
+
+
+
+/*@media all and (min-width: 400px) {
+
+}
+
+
+@media all and (min-width: 600px) {
+
+}
+
+@media all and (min-width: 900px) {
+  #stream1, #stream2 {
+    transform: scale(0.70);
+  }
+}*/
+
+
+
+@media all and (max-width: 1220px) {
+  #stream1 {
+    transform: scale(0.90);
+    top: 67%;
+    left: 76%;
+  }
+
+  #stream2 {
+    transform: scale(0.90);
+    top: 66%;
+    left: 77.5%;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  #stream1 {
+    transform: scale(0.80);
+    top: 66%;
+    left: 76%;
+  }
+
+  #stream2 {
+    transform: scale(0.80);
+    top: 65.5%;
+    left: 77.25%;
+  }
+}
+
+@media all and (max-width: 1100px) {
+  #stream1 {
+    transform: scale(0.70);
+    top: 65%;
+    left: 74.5%;
+  }
+
+  #stream2 {
+    transform: scale(0.70);
+    top: 64%;
+    left: 76.5%;
+  }
+}
+
+@media all and (max-width: 979px) {
+  #stream1 {
+    transform: scale(0.60);
+    top: 64%;
+    left: 75.5%;
+  }
+
+  #stream2 {
+    transform: scale(0.60);
+    top: 63.5%;
+    left: 76.5%;
+  }
+}
+
+
+
+
+
+
