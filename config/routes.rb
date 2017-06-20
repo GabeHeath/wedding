@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  resources "contacts", only: [:create]
+  resources "rsvps", only: [:create]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

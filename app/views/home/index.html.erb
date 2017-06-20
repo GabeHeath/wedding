@@ -1,125 +1,550 @@
-<ul id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="55" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative;" data-mode="cursor">
-  	  <li class="layer" data-depth="0.01"><%= image_tag("sun2.gif", id: "sun1", class: "unselectable") %></li>
-  	  <li class="layer" data-depth="0.03"><%= image_tag("mountain1.png", id: "mountain1", class: "unselectable") %></li>
-  	  <li class="layer" data-depth="0.05"><%= image_tag("buildings1.png", id: "buildings", class: "unselectable") %></li>
-  	  <li class="layer" data-depth="0.05"><%= image_tag("cow-right.gif", id: "cows", class: "unselectable") %></li>
-  	  <li class="layer" data-depth="0.08"><%= image_tag("cloud2.png", id: "cloud2", class: "unselectable") %></li>
-  	  <li class="layer" data-depth="0.1"><%= image_tag("tree-hill1.png", id: "tree-hill1", class: "unselectable") %></li>
-  	  <li class="layer" data-depth="0.15"><%= image_tag("cloud1.png", id: "cloud1", class: "unselectable", style: "position: relative;") %></li>
-	  <li class="layer" data-depth="0.4">
-	  	<ul class="main">
-	  		<li><%= image_tag("hill2.png", id: "hill1", class: "unselectable") %></li>
-	  		<li>
-				<svg version="1.1" id="stream1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="95.7px" height="330.7px" viewBox="0 0 95.7 330.7" enable-background="new 0 0 95.7 330.7" xml:space="preserve">
-<path id="ripple1" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M25.1,0.3c0,0,72.5,77.5,70,120s-64.8,53.8-76,77.5
-	s42.8,96.2,76.6,132.5"/>
-</svg>
+<div id="loading-wrapper" >
+	<%= image_tag("loading.gif", id: "loading", class: "unselectable") %>
+	<div id="loading-text" >Loading...</div>
+</div>
 
-				<svg version="1.1" id="stream2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="109.3px" height="330.7px" viewBox="0 0 109.3 330.7" enable-background="new 0 0 109.3 330.7" xml:space="preserve">
-<path id="ripple2" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M57.8,0.3c0,0,53.5,67.5,51,110s-66.8,54.8-78,78.5
-	s45.9,105.2,79.6,141.5"/>
-</svg>
+<div id="container" class="wrapper">
+	<ul id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="55" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative;" data-mode="cursor">
+		<li class="layer" data-depth="0.01"><%= image_tag("sun2.gif", id: "sun1", class: "unselectable") %></li>
+		<li class="layer" data-depth="0.03"><%= image_tag("mountain4.png", id: "mountain1", class: "unselectable") %></li>
+		<li class="layer" data-depth="0.05">
+			<ul id="back" class="main">
+				<li><%= image_tag("buildings5.png", class: "unselectable") %></li>
+				<li class="cow-path">
+					<%= image_tag("cow-right.gif", id: "cows", class: "unselectable") %>
+				</li>
+			</ul>
+		</li>
+		<li class="layer" data-depth="0.08"><%= image_tag("cloud2.png", id: "cloud2", class: "unselectable") %></li>
+		<li class="layer" data-depth="0.1"><%= image_tag("front.png", id: "tree-hill1", class: "unselectable") %></li>
+		<li class="layer" data-depth="0.15"><%= image_tag("cloud1.png", id: "cloud1", class: "unselectable", style: "position: relative;") %></li>
+		<li class="layer" data-depth="0.4">
+			<ul id="hill" class="main">
+				<li><%= image_tag("hill7.png", class: "unselectable") %></li>
+				<li class="hanger">
+					<svg version="1.1" id="stream1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="95.7px" height="330.7px" viewBox="0 0 95.7 330.7" enable-background="new 0 0 95.7 330.7" xml:space="preserve">
+						<path id="ripple1" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M25.1,0.3c0,0,72.5,77.5,70,120s-64.8,53.8-76,77.5
+						s42.8,96.2,76.6,132.5"/>
+					</svg>
+
+					<svg version="1.1" id="stream2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="109.3px" height="330.7px" viewBox="0 0 109.3 330.7" enable-background="new 0 0 109.3 330.7" xml:space="preserve">
+						<path id="ripple2" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" d="M57.8,0.3c0,0,53.5,67.5,51,110s-66.8,54.8-78,78.5
+						s45.9,105.2,79.6,141.5"/>
+					</svg>
+				</li>
+			</ul>
+		</li>
+
+		<!-- <li class="layer" data-depth="0.7"><%= image_tag("foreground.png", id: "front", class: "unselectable") %></li> -->
+	</ul>
+
+	<button id="info">Click</button>
+
+	<div id="rsvp" class="info-menu">rsvp</div>
+	<div id="ceremony" class="info-menu">ceremony</div>
+	<div id="accomodations" class="info-menu">accomodations</div>
+	<div id="things" class="info-menu">things to do</div>
+	<div id="registry" class="info-menu">registry</div>
+	<div id="contact" class="info-menu">contact us</div>
 
 
-			</li>
-	  	</ul>
-	  </li>
-	  <!-- <li class="layer" data-depth="0.4"><img id="ripple" src="images/ripple.gif" class="unselectable"></li> -->
-  	  <!-- <li class="layer" data-depth="0.2"><img id="tree" src="images/tree1.png"></li> -->
-  </ul>
 
-  <script>
-  	$(document).ready(function() {
+	<div id="rsvp-box" class="info-box">
+		<h1 class="box-title">RSVP</h1>
+		<br>
+		<div align="center">
+			<%= form_for(@rsvp) do |f| %>
+			
+			  <div>
+		  		<% if session[:from] == "rsvp" %>
+			        <% if flash[:errors] && !flash[:errors].empty? then -%>
+			        <p>
+			        	<ul id="rsvp-error">
+			        		<b>Error:</b>
+				        	<% flash[:errors].each do |error| %>
+				        		<li><%= error %></li>
+				        	<% end %>
+				        </ul>
+			        </p>
+
+			        <script>    	
+
+						$('.info-menu').each(function(index) {
+							$(this).show();
+						});
+
+						$("#info").text("Hide");
+
+						$( "#rsvp-box" ).toggle();
+			        </script>
+			        <% end -%>
+
+
+			        <% if flash[:success] && !flash[:success].empty? then -%>
+				        <p id="rsvp-success">
+					        <%= flash[:success] %>
+				        </p>
+
+				        <script>    	
+							$('.info-menu').each(function(index) {
+								$(this).show();
+							});
+
+							$("#info").text("Hide");
+
+							$( "#rsvp-box" ).toggle();
+				        </script>
+			        <% end -%>
+		        <% end %>
+			</div>
+
+
+			<table>
+				<tr>
+					<td>Your Name</td>
+					<td><%= f.text_field :name, :value => "#{flash[:name]}", :required => true %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :email %> (optional)</td>
+					<td><%= f.email_field :email, :value => "#{flash[:email]}", :required => false %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :response %></td>
+					<td><%= f.select :response, options_for_select([ "Will attend", "Regretfully declines" ]) %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :guest %> Name</td>
+					<td><%= f.text_field :guest, :value => "#{flash[:guest]}", :required => false %></td>
+				</tr>
+			</table>
+
+
+			   <div class="field hidden">
+			    <%= f.label :nickname %>
+			    <%= f.text_field :nickname, :value => "#{flash[:nickname]}" %>
+			  </div>
+			 <br>
+			  <div class="actions">
+			    <%= f.submit "Submit RSVP", class: "submit" %>
+			  </div>
+			<% end %>
+		</div>
+	</div>
+
+
+	<div id="ceremony-box" class="info-box">
+		<h1 class="box-title">Ceremony</h1>
+
+		<div id="clock"></div>
+		<script>
+		$('#clock').countdown('2016/07/02').on('update.countdown', function(event) {
+			var $this = $(this).html(event.strftime(''
+				+ '<span>%-w</span> week%!w '
+				+ '<span>%-d</span> day%!d '
+				+ '<span>%H</span> hr '
+				+ '<span>%M</span> min '
+				+ '<span>%S</span> sec'));
+		});
+		</script>
+		<br>
+		<div class="box-subsection">
+			<div class="box-subtitle">Where:</div>
+			<ul>
+				<li>Melrose Caverns</li>
+				<li>6639 N Valley Pike</li>
+				<li>Harrisonburg, VA 22802</li>
+				<li><br>Turn at the old stone gas station.</li>
+				<li><a href="https://goo.gl/maps/573t2" target="_blank">Click here for map.</a></li>
+			</ul>
+		</div>
+
+		<div class="box-subsection">
+			<div class="box-subtitle">When:</div>
+			<ul>
+				<li>Saturday July 02, 2016</li>
+				<li>5:00 PM</li>
+			</ul>
+		</div>
+
+		<div class="box-subsection" style="width: 200px;">
+			<div class="box-subtitle">Dress Code:</div>
+			<ul>
+				<li>Casual</li>
+				<li>It will be hot and we want you all to be comfortable.</li>
+			</ul>
+		</div>
+	</div><!-- End ceremony box -->
+
+	<div id="accomodations-box" class="info-box">
+		<h1 class="box-title">Accomodations</h1>
+
+			A block of rooms at these hotels has been reserved for our guests at a discounted rate, please reference the Heath/Blackmon wedding when making your reservations. Kindly reserve your room by June 1st, 2016.
+
+		<div class="box-subsection">
+			<div class="box-subtitle">Fairfield Inn & Suites:</div>
+			<ul>
+				<li>1946 Medical Ave.</li>
+				<li>Harrisonburg, Va 22801</li>
+				<li>(540) 433-9333</li>
+			</ul>
+		</div>
+
+		<div class="box-subsection">
+			<div class="box-subtitle">Best Western Harrisonburg Inn:</div>
+			<ul>
+				<li>45 Burgess Rd.</li>
+				<li>Harrisonburg, Va 22801</li>
+				<li>(540) 433-6089</li>
+			</ul>
+		</div>
+
+		<div>
+
+			<div style="float:left; font-weight:700; margin-bottom:15px; width:100%">Here are some other hotels in the area you can try. Feel free to shop around.</div>
+
+		<div class="box-subsection">
+			<div class="box-subtitle">Holiday Inn:</div>
+			<ul>
+				<li>400 East Market Street.</li>
+				<li>Harrisonburg, Va 22801</li>
+			</ul>
+		</div>
+
+		<div class="box-subsection">
+			<div class="box-subtitle">Comfort Inn:</div>
+			<ul>
+				<li>1440 East Market Street.</li>
+				<li>Harrisonburg, Va 22801</li>
+			</ul>
+		</div>
+
+		<div class="box-subsection">
+			<div class="box-subtitle">Hampton Inn:</div>
+			<ul>
+				<li>85 University Blvd.</li>
+				<li>Harrisonburg, Va 22801</li>
+			</ul>
+		</div>
+
+		<div class="box-subsection">
+			<div class="box-subtitle">Courtyard Harrisonburg:</div>
+			<ul>
+				<li>1890 Evelyn Byrd Ave.</li>
+				<li>Harrisonburg, Va 22801</li>
+			</ul>
+		</div>
+
+	</div>
+
+
+	</div><!-- End accomodations -->
+
+	<div id="things-box" class="info-box">
+		<h1 class="box-title">Things To Do</h1>
+
+		<div class="box-subsection">
+			<div class="box-subtitle">Outdoors</div>
+			<ul>
+				<li><a href="http://www.jmu.edu/arboretum/" target="_blank">Arboretum</a></li>
+				<li><a rel="tooltip" href="http://www.harrisonburgva.gov/riven-rock-park" title="mountain stream, forest trails; about 13 miles west of town" target="_blank">Riven Rock Park</a></li>
+				<li><a rel="tooltip" href="http://www.harrisonburgva.gov/purcell-park" title="tennis courts, huge playground, paved walking trails throughout" target="_blank">Purcell Park</a></li>
+				<li><a href="http://www.fs.usda.gov/main/gwj/home" target="_blank">George Washington National Forest</a></li>
+				<li><a href="http://www.nps.gov/shen/index.htm" target="_blank">Shenandoah National Park</a></li>
+			</ul>
+		</div>
+
+		<div class="box-subsection">
+			<div class="box-subtitle">Breweries</div>
+			<ul>
+				<li><a href="https://brotherscraftbrewing.com/" target="_blank">Brothers</a></li>
+				<li><a href="http://threenotchdbrewing.com/" target="_blank">Three Notch'd</a></li>
+				<li><a href="http://www.palefirebrewing.com/" target="_blank">Pale Fire</a></li>
+			</ul>
+		</div>
+
+		<div class="box-subsection">
+			<div class="box-subtitle">Museums</div>
+			<ul>
+				<li><a rel="tooltip" href="http://www.frontiermuseum.org/" title="living history museum with European and African homes and farms; about 27 miles south on I-81" target="_blank">Frontier Culture Museum in Staunton</a></li>
+				<li><a rel="tooltip" href="http://www.valleyheritagemuseum.org/" title="rotating exhibits on local history; home of the local historical society" target="_blank">Valley Heritage Museum</a></li>
+				<li><a rel="tooltip" href="http://www.iexploremore.com/" title="children's museum with hands-on art and science activities plus a lot more" target="_blank">Explore More Discovery Museum</a></li>
+				<li><a rel="tooltip" href="http://www.vaquiltmuseum.org/" title="quilts!" target="_blank">Virginia Quilt Museum</a></li>
+			</ul>
+		</div>
+
+		<div class="box-subsection">
+			<div class="box-subtitle">Do Downtown</div>
+			<ul>
+				<li><a href="http://www.downtownharrisonburg.org/dine/downtown-restaurants" target="_blank">Downtown Dining</a></li>
+				<li><a href="http://www.downtownharrisonburg.org/shop/downtown-shops/" target="_blank">Downtown Shopping</a></li>
+				<li><a rel="tooltip" href="http://www.harrisonburgfarmersmarket.com/" title="Saturdays 8AM - 1PM" target="_blank">Harrisonburg Farmer’s Market</a></li>
+			</ul>
+		</div>
+
+		<div class="box-subsection">
+			<div class="box-subtitle">Vineyards</div>
+			<ul>
+				<li><a href="http://bluestonevineyard.com/" target="_blank">Bluestone Vineyard</a></li>
+				<li><a href="http://www.crosskeysvineyards.com/" target="_blank">CrossKeys Vineyard</a></li>
+			</ul>
+		</div>
+
+	</div><!-- End Things to do -->
+
+	<div id="registry-box" class="info-box">Check back later...</div>
+	<div id="contact-box" class="info-box">
+		<h1 class="box-title">Contact Us</h1>
+
+		<div align="center">
+			<%= form_for(@contact) do |f| %>
+			
+			  <div>
+			  	<% if session[:from] == "contact" %>
+			        <% if flash[:errors] && !flash[:errors].empty? then -%>
+			        <p>
+			        	<ul id="error">
+			        		<b>Error:</b>
+				        	<% flash[:errors].each do |error| %>
+				        		<li><%= error %></li>
+				        	<% end %>
+				        </ul>
+			        </p>
+
+			        <script>    	
+
+						$('.info-menu').each(function(index) {
+							$(this).show();
+						});
+
+						$("#info").text("Hide");
+
+						$( "#contact-box" ).toggle();
+			        </script>
+			        <% end -%>
+
+
+			        <% if flash[:success] && !flash[:success].empty? then -%>
+				        <p id="success">
+					        <%= flash[:success] %>
+				        </p>
+
+				        <script>    	
+							$('.info-menu').each(function(index) {
+								$(this).show();
+							});
+
+							$("#info").text("Hide");
+
+							$( "#contact-box" ).toggle();
+				        </script>
+			        <% end -%>
+		        <% end %>
+			</div>
+
+
+
+
+
+			  <div class="field">
+			    <%= f.label :name %>
+			    <%= f.text_field :name, :value => "#{flash[:name]}", :required => true %>
+			  </div>
+			  <div class="field">
+			    <%= f.label :email %>
+			    <%= f.email_field :email, :value => "#{flash[:email]}", :required => true %>
+			  </div>
+			  <div class="field">
+			    <%= f.label :message %><br>
+			    <%= f.text_area(:message, size: "60x10", :value => "#{flash[:message]}", :required => true) %>
+			  </div>
+			  <div class="field hidden">
+			    <%= f.label :nickname %>
+			    <%= f.text_field :nickname, :value => "#{flash[:nickname]}" %>
+			  </div>
+			  <div class="actions">
+			    <%= f.submit "Send Message", class: "submit" %>
+			  </div>
+			<% end %>
+		</div>
+	</div>
+
+</div> <!-- End Container -->
+
+<script>
+$(window).load(function() {
+    $('#loading-wrapper').hide();
+    $('#container').show();
+});
+
+
+$(window).load(function() {
+
+  		// Hide browser menu.
+  		(function() {
+  			setTimeout(function(){window.scrollTo(0,0);},0);
+  		})();
+
+		// Setup FastClick.
+		FastClick.attach(document.body);
+
+		// Add touch functionality.
+		if (Hammer.HAS_TOUCHEVENTS) {
+			$('#container').hammer({drag_lock_to_axis: true});
+			_.tap($('html'), 'a,button,[data-tap]');
+		}
+
+		// Add touch or mouse class to html element.
+		$('html').addClass(Hammer.HAS_TOUCHEVENTS ? 'touch' : 'mouse');
 
   		// Resize handler.
-		(resize = function() {
-			$('#scene')[0].style.width = window.innerWidth + 'px';
-			$('#scene')[0].style.height = window.innerHeight + 'px';
-		})();
+  		(resize = function() {
+  			$('#scene')[0].style.width = window.innerWidth + 'px';
+  			$('#scene')[0].style.height = window.innerHeight + 'px';
+  		})();
 
 		// Attach window listeners.
 		window.onresize = _.debounce(resize, 200);
 		window.onscroll = _.debounce(resize, 200);
 
-  		$('#scene').parallax();
+		$('#scene').parallax();
 
-  		jQuery.expr.filters.offscreen = function(el) {
-		  return (
+		jQuery.expr.filters.offscreen = function(el) {
+			return (
 		              //(el.offsetLeft + el.offsetWidth) < 0 ||
 		              (el.offsetTop + el.offsetHeight) < 0 || 
 		              (el.offsetLeft > window.innerWidth   || 
-		              el.offsetTop > window.innerHeight)
-		         );
+		              	el.offsetTop > window.innerHeight)
+		              );
 		};
 
-  		function start(element, length) {
+		function start(element, length) {
 			if ( $(element).is(':offscreen') ) {
-		       $(element).css({ left: '-'+ $(element).width() +'px'});
-		    }
+				$(element).css({ left: '-'+ $(element).width() +'px'});
+			}
 
-		    $(element).animate({left: '+='+ length + ''}, 5000, 'linear', function(){ start(element, length); });
+			$(element).animate({left: '+='+ length + ''}, 5000, 'linear', function(){ start(element, length); });
 		}
 
 		function cowMove() {
 			$('#cows').attr('src', '<%= image_path('cow-right.gif') %>');
-		    $('#cows').animate({left: '+='+ 65 + ''}, 20000, 'linear', function(){ $('#cows').attr('src', '<%= image_path('cow-left.gif') %>'); });
-		    $('#cows').animate({left: '-='+ 65 + ''}, 20000, 'linear', function(){ cowMove(); });
+			$('#cows').animate({left: '+='+ 65 + ''}, 20000, 'linear', function(){ $('#cows').attr('src', '<%= image_path('cow-left.gif') %>'); });
+			$('#cows').animate({left: '-='+ 65 + ''}, 20000, 'linear', function(){ cowMove(); });
 		}
-
-
-
-		// var box = $('#tree'),
-	 //    // Create some clones (these make up the trail)
-	 //    clones = $.map(Array(10), function(item, i){
-	 //        return box.clone().css('opacity', 1 / (i + 1)).hide().insertAfter(box);
-	 //    });
-
-	 //    box.animate({
-		//     top: '+=200',
-		//     left: '+=200'
-		// }, {
-		//     duration: 5000,
-		//     step: function(now, fx) {
-
-		//         // On each step, set a timeout for each clone,
-		//         // making it move to the required position.
-
-		//         var prop = fx.prop;
-
-		//         $.each(clones, function(i, clone){
-		//             clone = $(clone).show();
-		//             setTimeout(function(){
-		//                 clone.css(prop, now);
-		//             }, 50 * i);
-		//         });
-
-		//     }
-		// });
-
-		// function curve() {
-		//     $('#tree').animate({top: '-=200',left: '-=200'}, 5000, function() {
-		//         $('#tree').animate({top: '+=200', left: '+=200'}, 5000, function() {
-		//             curve();
-		//         });
-		//     });
-		// }
-
-
-
-
-
 
 
 		start('#cloud1', 100);
 		start('#cloud2', 50);
 		cowMove();
-		//curve();
+
+		$( "#info" ).click(function() {
+			if ( !($(this).text() === "Hide" )) {
+				$("#info").text("Hide");
+				ga('send', 'event', 'button', 'click', 'menu-btn');
+			} else {
+				$("#info").text("Menu");
+				ga('send', 'event', 'button', 'click', 'hide-btn');
+
+				$('.info-box').each(function() {
+					$(this).fadeOut( "slow" );
+				});
+			}
+
+			$('.info-menu').each(function(index) {
+				$(this).delay(250*(index+1)).toggle( "slow", function() {});
+			});
+		});
+
+
+        $('.info-menu').click(function() {
+        	var index = ($(this).index())-2; // I have no idea why but the indexing is starting at 2 rather than 0 hence the -2. Jeez.
+
+        	$('.info-box:eq('+ (index) +')').toggle("slow");
+        	ga('send', 'event', 'button', 'click', 'info-box'+index );
+        	$('.info-box').not( $('.info-box:eq('+ (index) +')') ).fadeOut("slow"); 
+        })
 
 
 
 
 
-  	});
-  </script>
+
+
+
+
+var targets = $( '[rel~=tooltip]' ),
+        target  = false,
+        tooltip = false,
+        title   = false;
+ 
+    targets.bind( 'mouseenter', function()
+    {
+        target  = $( this );
+        tip     = target.attr( 'title' );
+        tooltip = $( '<div id="tooltip"></div>' );
+ 
+        if( !tip || tip == '' )
+            return false;
+ 
+        target.removeAttr( 'title' );
+        tooltip.css( 'opacity', 0 )
+               .html( tip )
+               .appendTo( 'body' );
+ 
+        var init_tooltip = function()
+        {
+            if( $( window ).width() < tooltip.outerWidth() * 1.5 )
+                tooltip.css( 'max-width', $( window ).width() / 2 );
+            else
+                tooltip.css( 'max-width', 340 );
+ 
+            var pos_left = target.offset().left + ( target.outerWidth() / 2 ) - ( tooltip.outerWidth() / 2 ),
+                pos_top  = target.offset().top - tooltip.outerHeight() - 20;
+ 
+            if( pos_left < 0 )
+            {
+                pos_left = target.offset().left + target.outerWidth() / 2 - 20;
+                tooltip.addClass( 'left' );
+            }
+            else
+                tooltip.removeClass( 'left' );
+ 
+            if( pos_left + tooltip.outerWidth() > $( window ).width() )
+            {
+                pos_left = target.offset().left - tooltip.outerWidth() + target.outerWidth() / 2 + 20;
+                tooltip.addClass( 'right' );
+            }
+            else
+                tooltip.removeClass( 'right' );
+ 
+            if( pos_top < 0 )
+            {
+                var pos_top  = target.offset().top + target.outerHeight();
+                tooltip.addClass( 'top' );
+            }
+            else
+                tooltip.removeClass( 'top' );
+ 
+            tooltip.css( { left: pos_left, top: pos_top } )
+                   .animate( { top: '+=10', opacity: 1 }, 50 );
+        };
+ 
+        init_tooltip();
+        $( window ).resize( init_tooltip );
+ 
+        var remove_tooltip = function()
+        {
+            tooltip.animate( { top: '-=10', opacity: 0 }, 50, function()
+            {
+                $( this ).remove();
+            });
+ 
+            target.attr( 'title', tip );
+        };
+ 
+        target.bind( 'mouseleave', remove_tooltip );
+        tooltip.bind( 'click', remove_tooltip );
+    });
+
+
+	});
+</script>
